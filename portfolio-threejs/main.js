@@ -21,8 +21,8 @@ renderer.render(scene, camera);
 
 // Torus
 
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-const material = new THREE.MeshPhongMaterial({ color: 0xf8738 });
+const geometry = new THREE.TorusGeometry(20, 3, 8, 1000);
+const material = new THREE.MeshNormalMaterial({ color: 0x32f5ff8 });
 const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
@@ -61,7 +61,7 @@ Array(200).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+const spaceTexture = new THREE.TextureLoader().load('Earth.jpg');
 scene.background = spaceTexture;
 
 // Avatar
