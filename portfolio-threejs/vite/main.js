@@ -6,7 +6,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
@@ -14,14 +14,14 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(80);
+camera.position.setZ(50);
 camera.position.setX(-3);
 
 renderer.render(scene, camera);
 
 // Torus
 
-const geometry = new THREE.TorusGeometry(25, 5, 10, 300);
+const geometry = new THREE.TorusGeometry(15, 5, 10, 500);
 const material = new THREE.MeshNormalMaterial({ color: 0x32f5ff8 });
 const torus = new THREE.Mesh(geometry, material);
 
@@ -117,9 +117,9 @@ moveCamera();
 function animate() {
   requestAnimationFrame(animate);
 
-  torus.rotation.x += 0.001;
-  torus.rotation.y += 0.005;
-  torus.rotation.z += 0.001;
+  torus.rotation.x += 0.03;
+  torus.rotation.y += 0.05;
+  torus.rotation.z += 0.01;
 
   moon.rotation.x += 0.005;
 
