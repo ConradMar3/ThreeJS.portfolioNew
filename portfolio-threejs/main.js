@@ -6,7 +6,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(110, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
@@ -22,7 +22,7 @@ renderer.render(scene, camera);
 // Torus
 
 const geometry = new THREE.TorusGeometry(25, 5, 10, 300);
-const material = new THREE.MeshNormalMaterial({ color: 0x32f5ff8 });
+const material = new THREE.MeshNormalMaterial({ color: 0x5ff8 });
 const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
