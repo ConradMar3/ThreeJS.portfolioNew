@@ -16,6 +16,7 @@
 
     <header>
       <h2>Conrad Maré</h2>
+      <hr>
       <h5>Web Developer</h5>
     </header>
 
@@ -61,21 +62,56 @@
       <h2>👩🏽‍🚀 Projects</h2>
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+        <a href="https://paperkit-html5.vercel.app/">
+          Portfolio - HTML5/CSS3/JavaScript.
+        </a>
       </p>
 
-      <h2>🏆 Accomplishments</h2>
+      <p>
+        <a href="https://portfolio-responsive-new.vercel.app/">
+          Responsive Portfolio.
+        </a>
+      </p>
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+        <a href="https://reactjs-imminent-page.vercel.app/">
+          Responsive JSX.
+        </a>
+      </p>
+
+      <p>
+        <a href="https://login-seven-wheat.vercel.app/">
+          Basic React Login.
+        </a>
+      </p>
+
+      <p>
+        <a href="https://threejs-background.vercel.app/">
+          ThreeJS Landing-page.
+        </a>
+      </p>
+
+    </section>
+
+    <section>
+      <h2>🏆 Experience</h2>
+
+      <p>
+        <h3>
+          Matriculation:
+        </h3>
+        Die Hoërskool Menlopark.
+        <br>
+        2007.
+      </p>
+
+      <p>
+        <h3>
+          Sport Management & Golf Academy:
+        </h3>
+        Tshwane University of Technology.
+        <br>
+        2009.
       </p>
 
     </section>
@@ -112,19 +148,19 @@
 
     </section>
 
-    <blockquote>
+    <section>
       <h4>Thank you for watching!</h4>
       <br />
       <h3>Visit my GitHub account:</h3>
       <br />
       <h2>ConradMar3</h2>
       <h5>"https://github.com/ConradMar3"</h5>
-    </blockquote>
+    </section>
 
 
   </main>
 
-  <script type="module" src="/main.js">
+  <script type="module">
     import './style.css';
     import * as THREE from 'three';
     import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -133,7 +169,7 @@
     
     const scene = new THREE.Scene();
     
-    const camera = new THREE.PerspectiveCamera(110, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(125, window.innerWidth / window.innerHeight, 0.1, 1000);
     
     const renderer = new THREE.WebGLRenderer({
       canvas: document.querySelector('#bg'),
@@ -141,15 +177,16 @@
     
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.position.setZ(80);
-    camera.position.setX(-3);
+    camera.position.setZ(10);
+    camera.position.setY(0);
+    camera.position.setX(0);
     
     renderer.render(scene, camera);
     
     // Torus
     
-    const geometry = new THREE.TorusGeometry(25, 5, 10, 300);
-    const material = new THREE.MeshNormalMaterial({ color: 0x5ff8 });
+    const geometry = new THREE.TorusGeometry(25, 5, 5, 200);
+    const material = new THREE.MeshPhongMaterial({ color: 0x8e0d23 });
     const torus = new THREE.Mesh(geometry, material);
     
     scene.add(torus);
@@ -193,7 +230,7 @@
     
     // Avatar
     
-    const jeffTexture = new THREE.TextureLoader().load('image/Conrad.jpg');
+    const jeffTexture = new THREE.TextureLoader().load('image/Profile.jpg');
     
     const jeff = new THREE.Mesh(new THREE.BoxGeometry(5, 5, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
     
@@ -218,7 +255,7 @@
     moon.position.setX(-10);
     
     jeff.position.z = -5;
-    jeff.position.x = 2;
+    jeff.position.x = 5;
     
     // Scroll Animation
     
@@ -244,9 +281,9 @@
     function animate() {
       requestAnimationFrame(animate);
     
-      torus.rotation.x += 0.001;
+      torus.rotation.x += 0.005;
       torus.rotation.y += 0.005;
-      torus.rotation.z += 0.001;
+      torus.rotation.z += 0.005;
     
       moon.rotation.x += 0.005;
     
