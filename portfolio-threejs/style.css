@@ -75,6 +75,17 @@ blockquote p {
   line-height: 1;
 }
 
+hr {
+  padding-top: 0px;
+  padding-bottom: 1px;
+  color: white;
+  border-radius: 30%;
+}
+
+a {
+  color: white;
+}
+
 .left {
   grid-column: 6 / 12;
 }
